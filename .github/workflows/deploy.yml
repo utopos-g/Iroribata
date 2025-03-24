@@ -1,0 +1,23 @@
+name: Deploy GitHub Pages
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Replace API Key
+        run: |
+          echo "window.API = {" > public/api.js
+          echo "    SPREAD_SHEET_ID: '${{ secrets.SPREAD_SHEET_ID }}'," >> public/api.js
+          echo "    API_KEY: '${{ secrets.API_KEY }}'," >> public/api.js
+          echo "    GAS_ID: '${{ secrets.GAS_ID }}'," >> public/api.js
+          echo "};" >> public/api.js
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .
