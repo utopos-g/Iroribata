@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Iroribata/static/css/main.151f7969.css",
-    "main.js": "/Iroribata/static/js/main.5db3f87a.js",
+    "main.js": "/Iroribata/static/js/main.44a92109.js",
     "static/js/453.fe594889.chunk.js": "/Iroribata/static/js/453.fe594889.chunk.js",
     "static/media/thumbnail_noimage.png": "/Iroribata/static/media/thumbnail_noimage.606b3da9e17953c9b633.png",
     "index.html": "/Iroribata/index.html",
     "main.151f7969.css.map": "/Iroribata/static/css/main.151f7969.css.map",
-    "main.5db3f87a.js.map": "/Iroribata/static/js/main.5db3f87a.js.map",
+    "main.44a92109.js.map": "/Iroribata/static/js/main.44a92109.js.map",
     "453.fe594889.chunk.js.map": "/Iroribata/static/js/453.fe594889.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.151f7969.css",
-    "static/js/main.5db3f87a.js"
+    "static/js/main.44a92109.js"
   ]
 }

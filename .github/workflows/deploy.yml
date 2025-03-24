@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-permissions:
-  contents: write
 
 jobs:
   build:
@@ -12,22 +10,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Replace API Key
-        run: |
-          echo "window.API = {" > api.js
-          echo "    SPREAD_SHEET_ID: '${{ secrets.SPREAD_SHEET_ID }}'," >> api.js
-          echo "    API_KEY: '${{ secrets.API_KEY }}'," >> api.js
-          echo "    GAS_ID: '${{ secrets.GAS_ID }}'," >> api.js
-          echo "};" >> api.js
+        env:
+          REACT_APP_API_KEY: ${{secrets.API_KEY}}
+          REACT_APP_SPREAD_SHEET_ID: ${{secrets.SPREAD_SHEET_ID}}
+          REACT_APP_GAS_ID: ${{secrets.GAS_ID}}
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
           folder: .
-
-      - name: 変更をコミットしてプッシュ
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add api.js
-          git commit -m "Update API keys [skip ci]" || echo "No changes to commit"
-          git push
