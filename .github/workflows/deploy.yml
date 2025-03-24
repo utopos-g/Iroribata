@@ -10,12 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Replace API Key
+        run: |
         env:
           REACT_APP_API_KEY: ${{secrets.API_KEY}}
           REACT_APP_SPREAD_SHEET_ID: ${{secrets.SPREAD_SHEET_ID}}
           REACT_APP_GAS_ID: ${{secrets.GAS_ID}}
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: .
