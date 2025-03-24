@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -21,3 +23,11 @@ jobs:
         with:
           branch: gh-pages
           folder: .
+
+      - name: 変更をコミットしてプッシュ
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add api.js
+          git commit -m "Update API keys [skip ci]" || echo "No changes to commit"
+          git push
