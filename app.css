@@ -5,3 +5,8 @@
     background-position : center right; /*背景画像の配置*/
     padding-right: 18px; /*背景画像を入れる余白をつくる*/
   }
+
+  .roll_result {
+    text-shadow: 1px 1px 2px silver;
+    font-weight: bold;
+  }
