@@ -10,3 +10,20 @@
     text-shadow: 1px 1px 2px silver;
     font-weight: bold;
   }
+
+  .link_modal_back_drop{
+    z-index: 1240;
+  }
+
+  .link_modal{
+    z-index: 1250;
+  }
+
+  .navbar-light .navbar-brand{
+    color: white;
+  }
+
+  .navbar-light .navbar-nav .nav-link
+  {
+    color: white;
+  }
